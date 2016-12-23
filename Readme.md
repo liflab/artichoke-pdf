@@ -101,9 +101,8 @@ It is an implementation of the concepts published in the following
 reserach paper:
 
 S. Hallé, R. Khoury, A. El-Hokayem, Y. Falcone. (2016).
-[https://www.researchgate.net/publication/308863544](Decentralized 
-Enforcement of Artifact Lifecycles). Proc. EDOC 2016, IEEE Computer
-Society, 1-10.
+[Decentralized Enforcement of Artifact Lifecycles](https://www.researchgate.net/publication/308863544).
+Proc. EDOC 2016, IEEE Computer Society, 1-10.
 
 You may also be interested in
 [Artichoke-X](https://github.com/liflab/artichoke-x), a Java library

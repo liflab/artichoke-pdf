@@ -1,5 +1,5 @@
-Artichoke: enforcement of peer-action sequences in documents
-============================================================
+Artichoke-PDF: enforcement of peer-action sequences in documents
+================================================================
 
 Artichoke is a command-line front-end to stamp and check PDF documents
 that contain peer-action sequences.
@@ -26,7 +26,7 @@ that contain peer-action sequences.
 
 Usage:
 
-    artichoke filename fill -k keyfile -o outfile -p peername f1 v1 [f2 v2 [...]]
+    artichoke-pdf filename fill -k keyfile -o outfile -p peername f1 v1 [f2 v2 [...]]
 
 This will open `filename`, and write v1 to the field named f1 (and v2 to
 field v2, etc.) The argument `peername` is the name of the peer doing this
@@ -36,13 +36,13 @@ The resulting PDF will be written to `outfile`.
 For example, if Alice wants to write "foo" to field "F1" of `Form.pdf`, the
 command is:
 
-    artichoke Form.pdf fill -k private_key_Alice.pem -o Form-filled.pdf -p Alice F1 foo
+    artichoke-pdf Form.pdf fill -k private_key_Alice.pem -o Form-filled.pdf -p Alice F1 foo
 
 ## To dump the contents of a form
 
 Usage:
 
-    artichoke filename dump
+    artichoke-pdf filename dump
 
 This will print the current value of all the form's fields, and display a
 summary of the peer-action sequence contained in the document; this will look
@@ -67,7 +67,7 @@ column is a shortened version of the digest string for each event.
 
 Usage:
 
-    artichoke filename check keyfile1 [keyfile2 [...]]
+    artichoke-pdf filename check keyfile1 [keyfile2 [...]]
 
 This will check the peer-action sequence in `filename`, using public keys
 `keyfile1`, `keyfile2`, etc. if necessary. The keys must follow the naming
@@ -83,4 +83,29 @@ Check will perform three steps:
 
 For example:
 
-    artichoke Form-filled.pdf check public_key*.pem
+    artichoke-pdf Form-filled.pdf check public_key*.pem
+
+About Artichoke-PDF
+===================
+
+Artichoke-PDF is the result of research done by:
+
+- [Sylvain Hallé](http://leduotang.ca/sylvain), Raphaël Khoury from 
+  [Laboratoire d'informatique formelle](http://liflab.ca) at
+  [Université du Québec à Chicoutimi](http://www.uqac.ca), Canada
+- [Yliès Falcone](http://ylies.fr), Antoine El-Hokayem from
+  [Laboratoire d'informatique de Grenoble](http://liglab.fr) at 
+  [Université de Grenoble Alpes](http://www.univ-grenoble-alpes.fr/), France
+
+It is an implementation of the concepts published in the following
+reserach paper:
+
+S. Hallé, R. Khoury, A. El-Hokayem, Y. Falcone. (2016).
+[https://www.researchgate.net/publication/308863544](Decentralized 
+Enforcement of Artifact Lifecycles). Proc. EDOC 2016, IEEE Computer
+Society, 1-10.
+
+You may also be interested in
+[Artichoke-X](https://github.com/liflab/artichoke-x), a Java library
+for manipulating peer-action sequences in many types of documents (not
+just PDF).
