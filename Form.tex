@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fullpage}
+\usepackage[sfdefault]{cabin}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[x11names]{xcolor}
+
+\hypersetup{%
+  pdfauthor = {Sylvain Hallé},
+  pdftitle = {A sample dynamic form}
+}
+
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\begin{center}
+{\Large A sample dynamic form}
+\end{center}
+
+\begin{Form}%[action={http://your-web-server.com/path/receiveform.cgi}]
+
+%% A normal text field
+\noindent
+\TextField{F1}\\
+\TextField{F2}\\
+
+%% This is a hidden text field with a hidden label, which will contain
+%% the trace token for the document
+\TextField[name=Token,width=0in]{}
+
+\end{Form}
+\end{document}
